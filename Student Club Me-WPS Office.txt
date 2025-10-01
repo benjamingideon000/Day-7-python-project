@@ -1,0 +1,46 @@
+﻿# Student Club Membership Program
+
+# Let's define our students as tuples with names and ages
+students = [
+    ("Benjamin", 20),
+    ("Gideon", 21),
+    ("Mabinda", 19),
+    ("Gloria", 22),
+    ("Beatrice", 20)
+]
+
+# Now, let's create two clubs: Sports and Music
+# We'll use sets to store the students in each club
+club_sports = set([students[0], students[1], students[2]])
+club_music = set([students[2], students[3], students[4]])
+
+# Function to print club members
+def print_club_members(club, club_name):
+    print(f"\n{club_name} Club Members:")
+    for member in club:
+        print(f"Name: {member[0]}, Age: {member[1]}")
+
+# Print members of each club
+print_club_members(club_sports, "Sports")
+print_club_members(club_music, "Music")
+
+# Find common members between the two clubs
+common_members = club_sports.intersection(club_music)
+
+# Print common members
+print("\nCommon Members:")
+for member in common_members:
+    print(f"Name: {member[0]}, Age: {member[1]}")
+
+# Find members unique to each club
+unique_sports = club_sports.difference(club_music)
+unique_music = club_music.difference(club_sports)
+
+# Print unique members
+print("\nMembers unique to Sports Club:")
+for member in unique_sports:
+    print(f"Name: {member[0]}, Age: {member[1]}")
+
+print("\nMembers unique to Music Club:")
+for member in unique_music:
+    print(f"Name: {member[0]}, Age: {member[1]}")
